@@ -41,6 +41,30 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Snake",
+      "image": "https://i5.walmartimages.com/asr/0340430e-0246-4f81-8dab-e98323e6b26e_1.741acfc9f06cea3593e00c7c116999ec.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      "price": 50,
+      "id": 8
+    },
+    {
+      "name": "Snake",
+      "image": "https://i5.walmartimages.com/asr/0340430e-0246-4f81-8dab-e98323e6b26e_1.741acfc9f06cea3593e00c7c116999ec.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      "price": 50,
+      "id": 9
+    },
+    {
+      "name": "Chicken Ramen",
+      "image": "https://i5.walmartimages.com/asr/0340430e-0246-4f81-8dab-e98323e6b26e_1.741acfc9f06cea3593e00c7c116999ec.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      "price": 50,
+      "id": 10
+    },
+    {
+      "name": "Chicken Ramen",
+      "image": "https://i5.walmartimages.com/asr/0340430e-0246-4f81-8dab-e98323e6b26e_1.741acfc9f06cea3593e00c7c116999ec.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      "price": 50,
+      "id": 11
     }
   ]
 }
