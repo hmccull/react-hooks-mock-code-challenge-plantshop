@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function NewPlantForm({ addNewPlant }) {
+function NewPlantForm({ addNewPlant, setUpdatePlants }) {
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [price, setPrice] = useState(0);
@@ -13,6 +13,7 @@ function NewPlantForm({ addNewPlant }) {
       image,
       price,
     }
+    
     fetch('http://localhost:6001/plants', {
       method: 'POST',
       headers: {
@@ -20,12 +21,14 @@ function NewPlantForm({ addNewPlant }) {
       },
       body: JSON.stringify(newPlant)
     })
+      .then(res => res.json())
+      .then(plantData => {
+        addNewPlant();
+      })
 
-    addNewPlant(newPlant)
-
-    setName('');
-    setImage('');
-    setPrice('');
+      setName('');
+      setImage('');
+      setPrice('');
   };
 
   return (
@@ -36,12 +39,14 @@ function NewPlantForm({ addNewPlant }) {
           type="text" 
           name="name" 
           placeholder="Plant name" 
+          value={name}
           onChange={e => setName(e.target.value)}
         />
         <input 
           type="text" 
           name="image" 
           placeholder="Image URL"
+          value={image}
           onChange={e => setImage(e.target.value)} 
         />
         <input 
@@ -49,6 +54,7 @@ function NewPlantForm({ addNewPlant }) {
           name="price" 
           step="0.01" 
           placeholder="Price" 
+          value={price}
           onChange={e => setPrice(e.target.value)}
         />
         <button type="submit">Add Plant</button>

@@ -7,15 +7,16 @@ import Search from "./Search";
 function PlantPage() {
   const [plants, setPlants] = useState([]);
   const [search, setSearch] = useState('');
+  const [updatePlants, setUpdatePlants] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:6001/plants')
       .then(res => res.json())
       .then(plantData => setPlants(plantData))
-  }, [])
+  }, [updatePlants])
 
-  function addNewPlant(newPlant) {
-    setPlants([...plants, newPlant])
+  function addNewPlant() {
+    setUpdatePlants(!updatePlants)
   }
 
   const plantsToDisplay = plants.filter(plant => {
@@ -26,7 +27,7 @@ function PlantPage() {
 
   return (
     <main>
-      <NewPlantForm addNewPlant={addNewPlant} />
+      <NewPlantForm addNewPlant={addNewPlant} setUpdatePlants={setUpdatePlants} />
       <Search search={search} setSearch={setSearch} />
       <PlantList plants={plantsToDisplay} />
     </main>
